@@ -23,7 +23,7 @@ class ParkingLot {
     private int availableSpots = 50;
     private LinkedList<Vehicle> parkedVehicles = new LinkedList<>();
 
-    // Register vehicle with additional details
+    
     public void registerVehicle(String licensePlate, String driverName, String department) {
         if (availableSpots > 0) {
             Vehicle vehicle = new Vehicle(licensePlate, driverName, department);
@@ -36,7 +36,7 @@ class ParkingLot {
         }
     }
 
-    // Exit vehicle
+    
     public void exitVehicle(String licensePlate) {
         boolean found = false;
         for (Vehicle vehicle : parkedVehicles) {
@@ -54,7 +54,7 @@ class ParkingLot {
         }
     }
 
-    // List all parked vehicles
+    
     public void listParkedVehicles() {
         if (parkedVehicles.isEmpty()) {
             System.out.println("No vehicles are currently parked.");
@@ -80,11 +80,11 @@ public class ParkingSystem {
             System.out.println("4. Exit Program");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine();  // consume the newline character
+            scanner.nextLine();  
 
             switch (choice) {
                 case 1:
-                    // Register Vehicle
+                    
                     System.out.print("Enter License Plate: ");
                     String licensePlate = scanner.nextLine();
                     System.out.print("Enter Driver's Name: ");
@@ -95,19 +95,19 @@ public class ParkingSystem {
                     break;
 
                 case 2:
-                    // Exit Vehicle
+                    
                     System.out.print("Enter License Plate: ");
                     licensePlate = scanner.nextLine();
                     parkingLot.exitVehicle(licensePlate);
                     break;
 
                 case 3:
-                    // List Parked Vehicles
+                    
                     parkingLot.listParkedVehicles();
                     break;
 
                 case 4:
-                    // Exit Program
+            
                     System.out.println("Exiting the program.");
                     scanner.close();
                     return;
